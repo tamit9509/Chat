@@ -17,7 +17,17 @@
       </div>
     </div>
     <div class="mt-4 mb-4">
-      <input type="text" />
+      <form [formGroup]="search">
+        <div class="form-group">
+          <input
+            type="text"
+            [(ngModel)]="name"
+            formControlName="name"
+            class="form-control"
+            (keyup)="keyup($event)"
+          />
+        </div>
+      </form>
     </div>
     <div class="col-sm-8"></div>
   </div>
