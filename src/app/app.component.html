@@ -1,35 +1,8 @@
 <div class="row chat">
   <div class="col-sm-4 container">
-    <div class="title mt-3">
-      Users
-    </div>
-    <div [ngClass]="{ users: true, 'scroll-bar': userLength > 10 }">
-      <div class="user mt-1 row" *ngFor="let user of users">
-        <span class="col-sm-10">{{ user.name }}</span>
-        <span
-          [ngClass]="{
-            'col-sm-2': true,
-            'status-active': user.status === 1,
-            'status-inactive': user.status === -1
-          }"
-          ><i class="fa fa-circle"></i
-        ></span>
-      </div>
-    </div>
-    <div class="mt-4 mb-4">
-      <form [formGroup]="search">
-        <div class="form-group">
-          <input
-            type="text"
-            [(ngModel)]="name"
-            formControlName="name"
-            class="form-control"
-            (keyup)="keyup($event)"
-          />
-        </div>
-      </form>
-    </div>
-    <div class="col-sm-8"></div>
+    <app-user-list-bar></app-user-list-bar>
   </div>
-  <div class="col-sm-8"></div>
+  <div class="col-sm-8">
+    <h1 @chatbox>Message</h1>
+  </div>
 </div>
